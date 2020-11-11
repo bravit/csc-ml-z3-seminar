@@ -1,0 +1,25 @@
+name: csc-ml-class-z3
+version: 0.1
+synopsis: Z3 assignment
+description: Z3 assignment
+category:            Sample Code
+license:             BSD3
+author: Vitaly Bragilevsky
+maintainer: Vitaly Bragilevsky <vit.bragilevsky@gmail.com>
+github: bravit/ml-code
+extra-source-files:
+    - README.md
+    - stack.yaml
+    - package.yaml
+
+dependencies: base >=4.12 && <4.15
+executables:
+    problems:
+      source-dirs: src
+      main: Problems.hs
+      dependencies:
+        - z3 >= 408
+      when:
+        - condition: os(darwin)
+          extra-lib-dirs: /usr/local/lib
+          extra-include-dirs: /usr/local/include

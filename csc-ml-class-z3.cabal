@@ -1,0 +1,41 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1beb4143a005d9d0e5b4d3e951c34bc2e14658b282d623cbb5ad8712d2ae478f
+
+name:           csc-ml-class-z3
+version:        0.1
+synopsis:       Z3 assignment
+description:    Z3 assignment
+category:       Sample Code
+homepage:       https://github.com/bravit/ml-code#readme
+bug-reports:    https://github.com/bravit/ml-code/issues
+author:         Vitaly Bragilevsky
+maintainer:     Vitaly Bragilevsky <vit.bragilevsky@gmail.com>
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+    stack.yaml
+    package.yaml
+
+source-repository head
+  type: git
+  location: https://github.com/bravit/ml-code
+
+executable problems
+  main-is: Problems.hs
+  other-modules:
+      Paths_csc_ml_class_z3
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.12 && <4.15
+    , z3 >=408
+  if os(darwin)
+    extra-lib-dirs:
+        /usr/local/lib
+  default-language: Haskell2010
